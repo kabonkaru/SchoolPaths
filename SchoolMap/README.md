@@ -62,15 +62,6 @@ This allows the system to compute the **shortest path visually and efficiently**
 ![SS4](/images/Screenshot4.jpg)
 
 ---
-## 🚀 Installation
-
-To run this project locally:
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/sachivinsmokes/SchoolPaths.git
-
----
 
 ## 👨‍💻 Authors
 
@@ -108,3 +99,16 @@ git clone https://github.com/sachivinsmokes/SchoolPaths.git
     </td>
   </tr>
 </table>
+
+
+## 🚀 Installation
+
+To run this project locally:
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/sachivinsmokes/SchoolPaths.git
+
+---
+
+
