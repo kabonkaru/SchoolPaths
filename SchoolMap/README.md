@@ -64,7 +64,7 @@ This allows the system to compute the **shortest path visually and efficiently**
 
 ## 👨‍💻 Authors
 
-<table>
+<table align="center">
   <tr>
     <td align="center">
       <a href="https://github.com/kabonkaru">
@@ -104,7 +104,7 @@ To run this project locally:
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/sachivinsmokes/SchoolPaths.git
+git clone https://github.com/kabonkaru/SchoolPaths.git
 
 ---
 
