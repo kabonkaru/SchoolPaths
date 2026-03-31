@@ -76,25 +76,25 @@ This allows the system to compute the **shortest path visually and efficiently**
       <sub>💻 Developer</sub>
     </td>
 
-    <td align="center">
-      <a href="https://github.com/sachivinsmokes">
-        <img src="https://github.com/sachivinsmokes.png" width="100px;" alt="JustDewish Pelecia Furio"/>
-        <br />
-        <sub><b>JustDewish Pelecia Furio</b></sub>
-      </a>
-      <br />
-      <sub>🎨 UI/UX Design & 🗺️ Data Mapping</sub>
-    </td>
+   <td align="center">
+  <a href="https://github.com/sachivinsmokes">
+    <img src="https://github.com/sachivinsmokes.png" width="100px;" alt="JustDewish Pelecia Furio"/>
+    <br />
+    <sub><b>JustDewish Pelecia Furio</b></sub>
+  </a>
+  <br />
+  <sub>🎨 UI/UX Design & 🗺️ Data Mapping</sub>
+</td>
 
-    <td align="center">
-      <a href="https://github.com/Mrkie-a">
-        <img src="https://github.com/Mrkie-a.png" width="100px;" alt="Markie Evan Conjares"/>
-        <br />
-        <sub><b>Markie Evan Conjares</b></sub>
-      </a>
-      <br />
-      <sub>📝 Documentation</sub>
-    </td>
+<td align="center">
+  <a href="https://github.com/Mrkie-a">
+    <img src="https://github.com/Mrkie-a.png" width="100px;" alt="Markie Evan Conjares"/>
+    <br />
+    <sub><b>Markie Evan Conjares</b></sub>
+  </a>
+  <br />
+  <sub>📝 Documentation</sub>
+</td>
   </tr>
 </table>
 
