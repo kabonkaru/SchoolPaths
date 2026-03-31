@@ -14,84 +14,58 @@ let pathGraph = {};
 // NOTE: WAG PAPALITAN YUNG CANVAS SIZE SA INDEX.HTML, DAPAT 600x400 TALAGA PARA HINDI MAGKA-MISMATCH
 // Pa edit niyo na lang yung coordinates based on actual map layout, ito sample lang to para may reference kayo kung paano i-structure yung data
 const nodeCoords = {
-  'UNIVERSITY CHAPEL': { x: 490, y: 310 },
-  'PERPETUA SOCORRO HALL/ADMIN BLDG.': { x: 510, y: 290 },
-  "FOUNDER'S STATUE": { x: 480, y: 300 },
-  'COVERED WALK': { x: 300, y: 220 },
-  'ROTONDA / SAINT ANTHONY PADUA STATUE': { x: 490, y: 280 },
-  'JUNIOR HIGH SCHOOL BUILDING': { x: 460, y: 270 },
-  'OPEN TENNIS COURT': { x: 420, y: 260 },
-  'ANNEX JUNIOR H/S BUILDING': { x: 390, y: 240 },
-  'MINI-GRANDSTAND 1': { x: 370, y: 220 },
-  'OPEN COURT PARKING AREA': { x: 350, y: 230 },
+  'UNIVERSITY CHAPEL': { x: 443, y: 340 },
+  'PERPETUA SOCORRO HALL/ADMIN BLDG.': { x: 460, y: 320 },
+  "FOUNDER'S STATUE": { x: 437, y: 329 },
+  'COVERED WALK': { x: 335, y: 180 },
+  'JUNIOR HIGH SCHOOL BUILDING': { x: 415, y: 300 },
+  'OPEN TENNIS COURT': { x: 385, y: 275 },
   'MINI PARK': { x: 230, y: 190 },
-  'MONTESSORI BUILDING': { x: 410, y: 190 },
-  'GRADUATE SCHOOL BUILDING': { x: 440, y: 210 },
-  'MINI HOTEL': { x: 470, y: 230 },
-  'DORMITORY': { x: 500, y: 240 },
-  'PARENTS WAITING AREA': { x: 330, y: 210 },
-  'DR. ANDRES C. GONZALES BUILDING': { x: 310, y: 200 },
-  'SENIOR H/S BUILDING': { x: 290, y: 190 },
-  'UNIVERSITY FORUM': { x: 250, y: 240 },
-  'MAINTENANCE AREA': { x: 220, y: 260 },
+  'MONTESSORI BUILDING': { x: 377, y: 160 },
+  'GRADUATE SCHOOL BUILDING': { x: 415, y: 217 },
+  'DR. ANDRES C. GONZALES BUILDING': { x: 286, y: 190 },
+  'SENIOR H/S BUILDING': { x: 286, y: 160 },
+  'UNIVERSITY FORUM': { x: 246, y: 210 },
   'SWIMMING POOL': { x: 190, y: 240 },
   'BASKETBALL COURT 1': { x: 200, y: 220 },
   'TWIN TENNIS COURT': { x: 210, y: 200 },
   'OVAL AND FOOTBALL FIELD': { x: 140, y: 220 },
-  'MINI GRANDSTAND 2': { x: 110, y: 260 },
-  'GUARD HOUSE 2': { x: 90, y: 250 },
-  'GUARD HOUSE 1': { x: 490, y: 320 },
+  'GUARD HOUSE 1': { x: 440, y: 364 },
   'DR. SANTIAGO ORTEGA BUILDING': { x: 210, y: 160 },
-  'SGO CAFETERIA': { x: 220, y: 170 },
+  'SGO CAFETERIA': { x: 220, y: 120 },
   'FIRING RANGE': { x: 230, y: 130 },
-  'MINI TREE PARK': { x: 250, y: 110 },
-  'GREGORIA SANCHEZ HALL': { x: 280, y: 120 },
-  'MINI FOOTBALL FIELD': { x: 270, y: 150 },
-  'MARITIME BUILDING': { x: 330, y: 140 },
-  'BASKETBALL COURT 2': { x: 340, y: 160 },
-  'LANDSHIP': { x: 370, y: 170 },
-  'PC COLLECTION BUILDING': { x: 460, y: 340 },
-  'GATE 1': { x: 490, y: 350 },
-  'GATE 3': { x: 70, y: 250 },
-  'THE HUB': { x: 150, y: 170 }
+  'MINI TREE PARK': { x: 250, y: 25 },
+  'GREGORIA SANCHEZ HALL': { x: 320, y: 70 },
+  'MARITIME BUILDING': { x: 280, y: 57 },
+  'BASKETBALL COURT 2': { x: 320, y: 110 },
+  'PC COLLECTION BUILDING': { x: 425, y: 382 },
+  'GATE 1': { x: 435, y: 369},
+  'GATE 3': { x: 70, y: 235 },
+  'THE HUB': { x: 155, y: 120 }
 };
 
 // This is for the fixed campus path connections
-// PLS FIX YUNG DISTANCES, HINDI PA TO ACTUAL DATA, SAMPLE LANG TO
 const pathEdges = [
-  ['GATE 1', 'GATE 3', 900],
+
   ['GATE 1', 'UNIVERSITY CHAPEL', 40],
-  ['UNIVERSITY CHAPEL', 'PERPETUA SOCORRO HALL/ADMIN BLDG.', 20],
   ['UNIVERSITY CHAPEL', "FOUNDER'S STATUE", 15],
-  ["FOUNDER'S STATUE", 'ROTONDA / SAINT ANTHONY PADUA STATUE', 18],
-  ['ROTONDA / SAINT ANTHONY PADUA STATUE', 'MINI HOTEL', 25],
-  ['MINI HOTEL', 'DORMITORY', 30],
-  ['DORMITORY', 'PC COLLECTION BUILDING', 120],
-  ['ROTONDA / SAINT ANTHONY PADUA STATUE', 'JUNIOR HIGH SCHOOL BUILDING', 30],
+  ["FOUNDER'S STATUE", 'JUNIOR HIGH SCHOOL BUILDING', 30],
   ['JUNIOR HIGH SCHOOL BUILDING', 'OPEN TENNIS COURT', 40],
-  ['OPEN TENNIS COURT', 'ANNEX JUNIOR H/S BUILDING', 30],
-  ['ANNEX JUNIOR H/S BUILDING', 'MINI-GRANDSTAND 1', 30],
-  ['MINI-GRANDSTAND 1', 'OPEN COURT PARKING AREA', 30],
-  ['OPEN COURT PARKING AREA', 'DR. ANDRES C. GONZALES BUILDING', 50],
+  ['OPEN TENNIS COURT', 'DR. ANDRES C. GONZALES BUILDING', 50],
   ['DR. ANDRES C. GONZALES BUILDING', 'SENIOR H/S BUILDING', 20],
   ['SENIOR H/S BUILDING', 'UNIVERSITY FORUM', 60],
-  ['UNIVERSITY FORUM', 'MAINTENANCE AREA', 45],
-  ['MAINTENANCE AREA', 'SWIMMING POOL', 25],
+  ['UNIVERSITY FORUM', 'SWIMMING POOL', 25],
   ['SWIMMING POOL', 'BASKETBALL COURT 1', 25],
   ['BASKETBALL COURT 1', 'TWIN TENNIS COURT', 20],
   ['TWIN TENNIS COURT', 'OVAL AND FOOTBALL FIELD', 80],
-  ['OVAL AND FOOTBALL FIELD', 'MINI GRANDSTAND 2', 60],
-  ['MINI GRANDSTAND 2', 'GATE 3', 70],
+  ['OVAL AND FOOTBALL FIELD', 'GATE 3', 70],
+  ['UNIVERSITY CHAPEL', 'PERPETUA SOCORRO HALL/ADMIN BLDG.', 20],
   ['GATE 3', 'THE HUB', 70],
   ['THE HUB', 'DR. SANTIAGO ORTEGA BUILDING', 80],
   ['DR. SANTIAGO ORTEGA BUILDING', 'SGO CAFETERIA', 20],
   ['SGO CAFETERIA', 'FIRING RANGE', 60],
   ['FIRING RANGE', 'MINI TREE PARK', 60],
-  ['MINI TREE PARK', 'GREGORIA SANCHEZ HALL', 40],
-  ['GREGORIA SANCHEZ HALL', 'MINI FOOTBALL FIELD', 40],
-  ['MINI FOOTBALL FIELD', 'MARITIME BUILDING', 80],
-  ['MARITIME BUILDING', 'BASKETBALL COURT 2', 40],
-  ['BASKETBALL COURT 2', 'LANDSHIP', 40]
+  ['MINI TREE PARK', 'GREGORIA SANCHEZ HALL', 40]
 ];
 
 
@@ -199,11 +173,11 @@ function drawNodes(selectedNode = null) {
     ctx.fillStyle = node === selectedNode ? '#f1c40f' : '#27ae60';
     ctx.fill();
 
-    // Optional text label on hover/click from click handler; skip for cleanliness
+
   }
 }
 
-// This is for drawing the path on canvas
+
 function drawPath(pathArray) {
   const canvas = document.getElementById('map-canvas');
   const ctx = canvas.getContext('2d');
@@ -234,7 +208,7 @@ function drawPath(pathArray) {
   drawNodes();
 }
 
-// Tooltip helpers
+
 function showTooltip(htmlContent, x, y) {
   const tooltip = document.getElementById('hover-tooltip');
   if (!tooltip) return;
@@ -259,7 +233,7 @@ function getNodeTooltipContent(node) {
   return `<strong>${node}</strong><br/>x: ${coords.x}, y: ${coords.y}<br/>Connected to: ${connectionText}`;
 }
 
-// This is for drawing a direct fallback path when graph path is missing
+
 function drawDirectPath(start, end) {
   const startCoords = nodeCoords[start];
   const endCoords = nodeCoords[end];
