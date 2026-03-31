@@ -54,12 +54,11 @@ This allows the system to compute the **shortest path visually and efficiently**
 
 ## 📸 Screenshots
 
-![App Preview](/images/Screenshot1.png)
-![Reference](/images/UsantMapReferenceDataLocation.jpg)
-![SS1](/images/Screenshot1.png)
-![SS2](/images/Screenshot2.png)
-![SS3](/images/Screenshot3.png)
-![SS4](/images/Screenshot4.jpg)
+![App Preview](images/Screenshot1.png)
+![Reference Map](images/UsantMapReferenceDataLocation.jpg)
+![Screenshot 2](images/Screenshot2.png)
+![Screenshot 3](images/Screenshot3.png)
+![Screenshot 4](images/Screenshot4.jpg)
 
 ---
 
@@ -69,7 +68,7 @@ This allows the system to compute the **shortest path visually and efficiently**
   <tr>
     <td align="center">
       <a href="https://github.com/kabonkaru">
-        <img src="https://github.com/kabonkaru" width="100px;" alt="Markie Evan C. Conjares"/>
+        <img src="https://github.com/kabonkaru.png" width="100px;" alt="John Carlo Landong"/>
         <br />
         <sub><b>John Carlo Landong</b></sub>
       </a>
@@ -79,27 +78,25 @@ This allows the system to compute the **shortest path visually and efficiently**
 
     <td align="center">
       <a href="https://github.com/sachivinsmokes">
-        <img src="https://github.com/sachivinsmokes.png" width="100px;" alt="Teammate"/>
+        <img src="https://github.com/sachivinsmokes.png" width="100px;" alt="JustDewish Pelecia Furio"/>
         <br />
         <sub><b>JustDewish Pelecia Furio</b></sub>
       </a>
       <br />
-      <sub>🎨 UI/UX Design</sub>
-      <sub>🗺️ Data Mapping</sub>
+      <sub>🎨 UI/UX Design & 🗺️ Data Mapping</sub>
     </td>
 
     <td align="center">
       <a href="https://github.com/Mrkie-a">
-        <img src="https://github.com/Mrkie-a.png" width="100px;" alt="Teammate"/>
+        <img src="https://github.com/Mrkie-a.png" width="100px;" alt="Markie Evan Conjares"/>
         <br />
         <sub><b>Markie Evan Conjares</b></sub>
       </a>
       <br />
-      <sub>Documentation</sub>
+      <sub>📝 Documentation</sub>
     </td>
   </tr>
 </table>
-
 
 ## 🚀 Installation
 
