@@ -4,46 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Campus Pathfinder</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 20px;
-    }
-    /* The container keeps the image and canvas stacked together */
-    #map-container {
-      position: relative;
-      margin:auto;
-      width: 600px; /* Adjust to match your map image width */
-      height: 400px; /* Adjust to match your map image height */
-      border: 2px solid #333;
-      background-color: #f0f0f0; /* Acts as a placeholder if no image loads */
-    }
-    
-    #map-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Canvas is positioned absolutely to overlay the image perfectly */
-    #map-canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      pointer-events: none; /* Lets you click the image underneath if needed */
-    }
-
-    .controls {
-      margin-top: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <h2>Campus Map Pathfinder</h2>
   
   <div id="map-container">
-    <img id="map-image" src="UsantLiveMap.jpg" alt="School Map">
+    <img id="map-image" src="images/UsantLiveMap.jpg" alt="School Map">
     <canvas id="map-canvas" width="600" height="400"></canvas>
   </div>
 
