@@ -1,36 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Campus Pathfinder</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USANT Campus Pathfinder</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h2>Campus Map Pathfinder</h2>
-  
-  <div id="map-container">
-    <img id="map-image" src="images/UsantLiveMap.jpg" alt="School Map">
-    <canvas id="map-canvas" width="600" height="400"></canvas>
-  </div>
+    <h2 class="aesthetic-title">Usant Campus Map Pathfinder</h2>
 
-  <div class="controls">
-    <div class="search-row">
-      <label for="from-input">From</label>
-      <input id="from-input" list="location-list" placeholder="Start location" />
-      <label for="to-input">To</label>
-      <input id="to-input" list="location-list" placeholder="End location" />
-      <button id="find-route-btn">Find Route</button>
+    <div class="main-layout">
+        
+        <div class="instruction-panel glass">
+            <h3>Quick Guide</h3>
+            <ul>
+                <li><span class="step-num">1</span> Click any <strong>Green Dot</strong> to set your <strong>Starting Point</strong>.</li>
+                <li><span class="step-num">2</span> Click a second <strong>Green Dot</strong> to set your <strong>Destination</strong>.</li>
+                <li><span class="step-num">3</span> Fields will fill automatically.</li>
+                <li><span class="step-num">4</span> Click <strong>Find Route</strong> to see the path!</li>
+            </ul>
+        </div>
+
+        <div class="content-wrapper">
+            <div id="map-container" class="glass-map">
+                <img id="map-image" src="images/UsantLiveMap.jpg" alt="Campus Map">
+                <canvas id="map-canvas" width="600" height="400"></canvas>
+            </div>
+
+            <div class="controls glass">
+                <div class="search-row">
+                    <div class="input-group">
+                        <label>From</label>
+                        <input id="from-input" list="location-list" placeholder="Start location...">
+                    </div>
+                    <div class="input-group">
+                        <label>To</label>
+                        <input id="to-input" list="location-list" placeholder="End location...">
+                    </div>
+                    <button id="find-route-btn">Find Route</button>
+                </div>
+                <datalist id="location-list"></datalist>
+                <div id="output-panel">
+                    <p id="output">Select two points to begin...</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <datalist id="location-list"></datalist>
+    <div id="hover-tooltip">Building Name</div>
 
-    <p id="output"></p>
-  </div>
-
-  <div id="hover-tooltip" style="position:absolute; display:none; background: rgba(0,0,0,.8); color:#fff; padding:5px 8px; border-radius:4px; font-size:12px; pointer-events:none; z-index:10;">Node</div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
